@@ -30,6 +30,7 @@ public class Solution extends VersionControl {
 			// don't use m = (l+r)/2; 
 			// it may leads to integer overflow 
 			// which may gets into RE
+			// for more info refer [blog](https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html)
             int m = l+(r-l)/2;
             if (isBadVersion(m)) r = m;
             else l = m+1;
