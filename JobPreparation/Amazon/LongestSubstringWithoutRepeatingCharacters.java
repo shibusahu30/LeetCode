@@ -33,7 +33,7 @@ class Solution {
                 //                 0 1 2 3 4 5 6 7 8 9 10
                 //                             |       |
                 //                             i       j
-                // map will return map.get('c') i.e 4 but i is at 6, so choose 6 as our next i
+                // map will return map.get('c') i.e 4(3+1) but i is at 6, so choose 6 as our next i
                 i = Math.max(i,map.get(s.charAt(j)));
             }
             max = Math.max(max,j-i+1);
