@@ -27,7 +27,7 @@ class Solution {
         Map<Character,Integer> map = new HashMap<>();
         for(int i = 0,j = 0; j < s.length();j++) {
             if(map.containsKey(s.charAt(j))) {
-                // left starting range is the max of last occurence of right range and the current left range
+                // left starting range is the max of last occurence of right range character and the current left range
                 i = Math.max(i,map.get(s.charAt(j)));
             }
             max = Math.max(max,j-i+1);
