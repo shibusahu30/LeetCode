@@ -28,12 +28,12 @@ class Solution {
         for(int i = 0,j = 0; j < s.length();j++) {
             if(map.containsKey(s.charAt(j))) {
                 // left starting range is the max of last occurence of right range character and the current left range
-                // lets say string a b c c f g h d c
-                //                 | | | | | | | | |
-                //                 0 1 2 3 4 5 6 7 8
-                //                         |       |
-                //                         i       j
-                // map will return map.get('c') i.e 3 but i is at 4, so choose 4 as next i
+                // lets say string a b c c d d f g h d c
+                //                 | | | | | | | | | | |
+                //                 0 1 2 3 4 5 6 7 8 9 10
+                //                             |       |
+                //                             i       j
+                // map will return map.get('c') i.e 4 but i is at 6, so choose 6 as our next i
                 i = Math.max(i,map.get(s.charAt(j)));
             }
             max = Math.max(max,j-i+1);
