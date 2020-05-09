@@ -23,9 +23,11 @@ Explanation: The answer is "wke", with the length of 3.
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         int max = 0;
+        // map every character ti its least recently occured position 
         Map<Character,Integer> map = new HashMap<>();
         for(int i = 0,j = 0; j < s.length();j++) {
             if(map.containsKey(s.charAt(j))) {
+                // left starting range is the max of last occurence of right range and the current left range
                 i = Math.max(i,map.get(s.charAt(j)));
             }
             max = Math.max(max,j-i+1);
