@@ -21,7 +21,7 @@ Output: true
 Example 2:
 
 Input: s = "axc", t = "ahbgdc"
-Output: false
+Output: false 
 
  
 
