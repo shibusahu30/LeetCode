@@ -1,1 +1,41 @@
-// Error 404
+/*
+Combination Sum III
+
+Find all possible combinations of k numbers that add up to a number n, given that only numbers from 1 to 9 can be used and each combination should be a unique set of numbers.
+
+Note:
+
+    All numbers will be positive integers.
+    The solution set must not contain duplicate combinations.
+
+Example 1:
+
+Input: k = 3, n = 7
+Output: [[1,2,4]]
+
+Example 2:
+
+Input: k = 3, n = 9
+Output: [[1,2,6], [1,3,5], [2,3,4]]
+*/
+class Solution {
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        List<List<Integer>> results = new ArrayList<List<Integer>>();
+        LinkedList<Integer> comb = new LinkedList<Integer>();
+        backtrack(n, k, 0, comb, results);
+        return results;
+    }
+    void backtrack(int remain, int k,  int idx,
+            LinkedList<Integer> comb,
+            List<List<Integer>> results) {
+        if(comb.size() == k) {
+            if(remain == 0) results.add(new ArrayList<Integer>(comb));
+            return;
+        }
+        for(int i = idx; i < 9; ++i) {
+            comb.add(i+1);
+            backtrack(remain-i-1, k, i+1, comb, results);
+            comb.removeLast();
+        }
+    }
+}
