@@ -38,10 +38,7 @@ class Node {
 
 class Solution {
     HashMap<Integer, Node> map = new HashMap<>();
-    public Node cloneGraph(Node node) {
-        return clone(node);
-    }
-    public Node clone(Node r) {
+    public Node cloneGraph(Node r) {
         if(r == null) return r;
         if(map.containsKey(r.val)) return map.get(r.val);
         
